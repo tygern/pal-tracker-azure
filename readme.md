@@ -95,7 +95,7 @@ and this [guide for Spring Cloud](https://docs.microsoft.com/en-us/azure/spring-
 
 1.  Deploy the jar file.
     ```bash
-    az spring-cloud app deploy -n timesheets --jar-path ./build/libs/pal-tracker.jar
+    az spring-cloud app deploy -n timesheets --jar-path ./applications/timesheets-server/build/libs/timesheets-server.jar
     ```
 
 1.  Exercise the [endpoints from IntelliJ](requests.http).

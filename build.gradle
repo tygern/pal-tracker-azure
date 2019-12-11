@@ -1,70 +1,31 @@
-import org.flywaydb.gradle.task.FlywayMigrateTask
-
 plugins {
-    id "java"
-    id "org.springframework.boot" version "2.1.9.RELEASE"
-    id "org.flywaydb.flyway" version "6.1.1"
+    id "org.springframework.boot" version "2.1.9.RELEASE" apply false
+    id "org.flywaydb.flyway" version "6.1.1" apply false
 }
 
-apply plugin: 'io.spring.dependency-management'
+subprojects {
+    if (["applications", "components", "databases"].contains(name)) return
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-}
+    apply plugin: "java"
+    apply plugin: "io.spring.dependency-management"
 
-repositories {
-    mavenCentral()
-}
-
-dependencyManagement {
-    imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR3")
+    java {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
-}
 
-dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-jdbc")
-    compile("org.springframework.boot:spring-boot-starter-actuator")
+    repositories {
+        mavenCentral()
+    }
 
-    compile("org.springframework.cloud:spring-cloud-config-client")
-    compile("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
-    compile("com.microsoft.azure:spring-cloud-starter-azure-spring-cloud-client:2.1.0")
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR3")
+        }
+    }
 
-    compile("mysql:mysql-connector-java:6.0.6")
-
-    testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile("org.mockito:mockito-core:2.23.4")
-}
-
-def developmentDbUrl = "jdbc:mysql://localhost:3306/timesheets_dev?user=tracker&useSSL=false&useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false"
-bootRun.environment([
-    "WELCOME_MESSAGE"      : "hello",
-    "SPRING_DATASOURCE_URL": developmentDbUrl,
-])
-
-def testDbUrl = "jdbc:mysql://localhost:3306/timesheets_test?user=tracker&useSSL=false&useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false"
-test.environment([
-    "WELCOME_MESSAGE"      : "Hello from test",
-    "SPRING_DATASOURCE_URL": testDbUrl,
-])
-
-flyway {
-    url = developmentDbUrl
-    user = "tracker"
-    password = ""
-    locations = ["filesystem:databases/timesheets/migrations"]
-}
-
-task testMigrate(type: FlywayMigrateTask) {
-    url = testDbUrl
-}
-
-task prodMigrate(type: FlywayMigrateTask) {
-    doFirst {
-        user = project.getProperty("jdbcUser")
-        password = project.getProperty("jdbcPassword")
-        url = project.getProperty("jdbcUrl")
+    dependencies {
+        testCompile("org.mockito:mockito-core")
+        testCompile("junit:junit")
     }
 }
