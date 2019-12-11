@@ -9,4 +9,5 @@ include(
     ":components:users",
     ":databases:registration-database",
     ":databases:timesheets-database",
+    ":platform-services:service-registry",
 )

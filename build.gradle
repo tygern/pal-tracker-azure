@@ -40,5 +40,5 @@ subprojects { subProj ->
 }
 
 static boolean isNotAJavaProject(Project project) {
-    ["applications", "components"].contains(project.name) || project.path.startsWith(":databases")
+    ["applications", "components", "platform-services"].contains(project.name) || project.path.startsWith(":databases")
 }

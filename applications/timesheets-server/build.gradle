@@ -3,8 +3,8 @@ dependencies {
 }
 
 bootRun.environment([
-    "WELCOME_MESSAGE"      : "hello",
-    "SPRING_DATASOURCE_URL": timesheetsDevDb,
-    "SERVER_PORT": 8084,
-    "REGISTRATION_SERVER_ENDPOINT": "http://localhost:8083"
+    "WELCOME_MESSAGE"             : "hello",
+    "SPRING_DATASOURCE_URL"       : timesheetsDevDb,
+    "SERVER_PORT"                 : 8084,
+    "REGISTRATION_SERVER_ENDPOINT": "http://registration-server"
 ])

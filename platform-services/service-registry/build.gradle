@@ -1,0 +1,11 @@
+apply plugin: "org.springframework.boot"
+
+dependencies {
+    compile("org.springframework.cloud:spring-cloud-starter-netflix-eureka-server")
+}
+
+bootRun.environment([
+    "SERVER_PORT"                       : 8761,
+    "EUREKA_CLIENT_REGISTER_WITH_EUREKA": false,
+    "EUREKA_CLIENT_FETCH_REGISTRY"      : false,
+])
