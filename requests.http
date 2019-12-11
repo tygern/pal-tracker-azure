@@ -1,10 +1,37 @@
+### Get timesheets app endpoint
+GET {{timesheetsUrl}}/
+
+### Get registration app endpoint
+GET {{registrationUrl}}/
+
+### Create user
+POST {{registrationUrl}}/registration
+Content-Type: application/json
+
+{"name": "Sally"}
+
+### Get user
+GET {{registrationUrl}}/users/1
+
+### Get account
+GET {{registrationUrl}}/accounts?ownerId=1
+
+### Create project
+POST {{registrationUrl}}/projects
+Content-Type: application/json
+
+{"name": "Basket Weaving III", "accountId": 1}
+
+### Get projects
+GET {{registrationUrl}}/projects?accountId=1
+
 ### Create timesheet
 POST {{timesheetsUrl}}/time-entries/
 Content-Type: application/json
 
-{"projectId": 1, "userId": 3, "date": "2015-05-17", "hours": 6}
+{"projectId": 1, "userId": 1, "date": "2015-05-17", "hours": 6}
 
 ### Get timesheets
-GET {{timesheetsUrl}}/time-entries?userId=3
+GET {{timesheetsUrl}}/time-entries?userId=1
 
 ###

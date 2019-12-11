@@ -1,7 +1,12 @@
 rootProject.name = "pal-tracker"
 
 include(
-    "applications:timesheets-server",
-    "components:timesheets",
-    "databases:timesheets-database",
+    ":applications:registration-server",
+    ":applications:timesheets-server",
+    ":components:accounts",
+    ":components:projects",
+    ":components:timesheets",
+    ":components:users",
+    ":databases:registration-database",
+    ":databases:timesheets-database",
 )

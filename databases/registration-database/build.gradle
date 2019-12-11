@@ -1,14 +1,14 @@
 import org.flywaydb.gradle.task.FlywayMigrateTask
 
 flyway {
-    url = timesheetsDevDb
+    url = registrationDevDb
     user = "tracker"
     password = ""
-    locations = ["filesystem:databases/timesheets-database/migrations"]
+    locations = ["filesystem:databases/registration-database/migrations"]
 }
 
 task testMigrate(type: FlywayMigrateTask) {
-    url = timesheetsTestDb
+    url = registrationTestDb
 }
 
 task prodMigrate(type: FlywayMigrateTask) {

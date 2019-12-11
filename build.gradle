@@ -7,6 +7,8 @@ subprojects { subProj ->
     ext {
         timesheetsDevDb = "jdbc:mysql://localhost:3306/timesheets_dev?user=tracker&useSSL=false&useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false"
         timesheetsTestDb = "jdbc:mysql://localhost:3306/timesheets_test?user=tracker&useSSL=false&useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false"
+        registrationDevDb = "jdbc:mysql://localhost:3306/registration_dev?user=tracker&useSSL=false&useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false"
+        registrationTestDb = "jdbc:mysql://localhost:3306/registration_test?user=tracker&useSSL=false&useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false"
     }
 
     if (isNotAJavaProject(subProj)) return

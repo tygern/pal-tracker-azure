@@ -1,0 +1,10 @@
+dependencies {
+    compile project(":components:accounts")
+    compile project(":components:projects")
+    compile project(":components:users")
+}
+
+bootRun.environment([
+    "SPRING_DATASOURCE_URL": registrationDevDb,
+    "SERVER_PORT": 8083,
+])

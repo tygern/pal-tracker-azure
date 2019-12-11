@@ -1,0 +1,13 @@
+subprojects {
+    apply plugin: "org.flywaydb.flyway"
+
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+
+        dependencies {
+            classpath("mysql:mysql-connector-java:8.0.17")
+        }
+    }
+}
