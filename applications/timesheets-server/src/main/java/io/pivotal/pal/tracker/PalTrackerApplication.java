@@ -1,5 +1,6 @@
 package io.pivotal.pal.tracker;
 
+import io.pivotal.pal.tracker.timesheets.TimeEntryRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

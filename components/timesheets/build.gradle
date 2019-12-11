@@ -1,0 +1,10 @@
+dependencies {
+    compile("org.springframework:spring-jdbc")
+    compile("org.springframework:spring-web")
+
+    testCompile("mysql:mysql-connector-java")
+}
+
+test.environment([
+    "SPRING_DATASOURCE_URL": timesheetsTestDb,
+])
