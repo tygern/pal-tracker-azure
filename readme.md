@@ -6,6 +6,11 @@ and this [guide for service registry on ASC](https://docs.microsoft.com/en-us/az
 
 ## Configure Azure Spring Cloud
 
+1.  Download and install the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
+
+1.  Visit the [Azure Portal](https://portal.azure.com/) and create an
+    account.
+
 1.  Login to Azure with `az login`.
 
 1.  Add the Azure Spring Cloud (ASC) extension.
