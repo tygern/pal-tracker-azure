@@ -19,7 +19,7 @@ and this [guide for service registry on ASC](https://docs.microsoft.com/en-us/az
     az extension add --name spring-cloud
     ```
 
-1.  Create an [Azure Spring Cloud instance](https://portal.azure.com/#create/Microsoft.AppPlatform)
+1.  Create an [ASC instance](https://portal.azure.com/#create/Microsoft.AppPlatform)
     in the Azure portal.
 
 1.  [Configure the Config Server](https://docs.microsoft.com/en-us/azure/spring-cloud/spring-cloud-quickstart-launch-app-portal#set-up-your-configuration-server)
@@ -118,4 +118,5 @@ and this [guide for service registry on ASC](https://docs.microsoft.com/en-us/az
 
 1.  Exercise the [endpoints from IntelliJ](requests.http).
 
-1.  [View the logs](https://docs.microsoft.com/en-us/azure/spring-cloud/diagnostic-services) of the applications.
+1.  [View the logs](https://docs.microsoft.com/en-us/azure/spring-cloud/diagnostic-services#view-the-logs) of the
+    applications.
